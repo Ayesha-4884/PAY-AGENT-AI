@@ -1,0 +1,14 @@
+services:
+  payagent-ai-demo:
+    build: .
+    container_name: payagent-ai-demo
+    ports:
+      - "5000:5000"
+    environment:
+      PAYMENT_MODE: ${PAYMENT_MODE:-mock}
+      PAYPAL_CLIENT_ID: ${PAYPAL_CLIENT_ID:-}
+      PAYPAL_CLIENT_SECRET: ${PAYPAL_CLIENT_SECRET:-}
+      SECRET_KEY: ${SECRET_KEY:-local-payagent-demo-only-change-me}
+    volumes:
+      - ./instance:/app/instance
+    restart: unless-stopped
