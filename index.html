@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d1b35">
+  <title>PayAgent AI | Agentic Commerce Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand-lockup">
+        <div class="brand-mark"><span></span><span></span><span></span></div>
+        <div><div class="brand-name">PayAgent <b>AI</b></div><div class="brand-sub">AGENTIC COMMERCE</div></div>
+      </div>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="side-nav" aria-label="Main navigation">
+        <button class="nav-item active" data-page="dashboard"><span class="nav-icon">◫</span><span>Overview</span></button>
+        <button class="nav-item" data-page="buyer"><span class="nav-icon">✧</span><span>Buyer agent</span><span class="nav-tag">AI</span></button>
+        <button class="nav-item" data-page="merchant"><span class="nav-icon">▦</span><span>Merchant shield</span><span class="nav-count" id="nav-review-count">0</span></button>
+        <button class="nav-item" data-page="activity"><span class="nav-icon">◷</span><span>Audit timeline</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sandbox-card">
+          <div class="sandbox-icon">◇</div>
+          <div><strong>Sandbox environment</strong><p>Demo data only. No live funds.</p></div>
+          <span class="pulse-dot"></span>
+        </div>
+        <button class="reset-link" id="reset-demo">↻ Reset demo data</button>
+        <div class="profile-row"><div class="avatar">PA</div><div><strong>PayAgent Demo</strong><small>Merchant workspace</small></div><span class="more-dots">•••</span></div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div class="breadcrumbs"><span>Workspace</span><i>/</i><strong id="breadcrumb-current">Overview</strong></div>
+        <div class="topbar-right">
+          <div class="env-pill"><span class="pulse-dot"></span> LOCAL DEMO</div>
+          <button class="icon-button" id="help-button" title="About this demo">?</button>
+          <div class="top-avatar">PA</div>
+        </div>
+      </header>
+
+      <section class="page active" id="page-dashboard">
+        <div class="page-heading heading-row">
+          <div><div class="eyebrow">FRIDAY, NOVEMBER 06, 2026 <span class="live-label"><span class="pulse-dot"></span> LIVE DEMO</span></div><h1>Commerce, on autopilot.</h1><p>One agent negotiates the deal. One shield protects the transaction.</p></div>
+          <button class="primary-button" data-go="buyer"> <span>✧</span> Launch buyer agent</button>
+        </div>
+        <div class="stats-grid">
+          <article class="stat-card"><div class="stat-top"><span>Total transactions</span><span class="stat-icon blue">↗</span></div><div class="stat-value" id="stat-total">—</div><div class="stat-foot"><span class="muted-dot"></span> All demo orders recorded</div></article>
+          <article class="stat-card"><div class="stat-top"><span>Auto-approved</span><span class="stat-icon green">✓</span></div><div class="stat-value" id="stat-approved">—</div><div class="stat-foot"><span class="positive">●</span> Passed risk rules</div></article>
+          <article class="stat-card"><div class="stat-top"><span>Review queue</span><span class="stat-icon orange">!</span></div><div class="stat-value" id="stat-review">—</div><div class="stat-foot"><span class="attention">●</span> Needs merchant attention</div></article>
+          <article class="stat-card"><div class="stat-top"><span>Gross demo volume</span><span class="stat-icon violet">$</span></div><div class="stat-value" id="stat-volume">—</div><div class="stat-foot"><span class="muted-dot"></span> Simulated / sandbox orders</div></article>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="panel lifecycle-panel">
+            <div class="panel-heading"><div><div class="eyebrow">AUTONOMOUS TRANSACTION</div><h2>From intent to resolution</h2></div><span class="panel-chip">5 steps</span></div>
+            <div class="lifecycle-track">
+              <div class="life-step done"><div class="life-node">1</div><strong>Initiation</strong><small>Buyer agent starts</small></div>
+              <div class="life-connector done"></div>
+              <div class="life-step done"><div class="life-node">2</div><strong>Agreement</strong><small>Terms negotiated</small></div>
+              <div class="life-connector done"></div>
+              <div class="life-step done"><div class="life-node">3</div><strong>Execution</strong><small>Checkout processed</small></div>
+              <div class="life-connector"></div>
+              <div class="life-step"><div class="life-node">4</div><strong>Logging</strong><small>Evidence recorded</small></div>
+              <div class="life-connector"></div>
+              <div class="life-step"><div class="life-node">5</div><strong>Resolution</strong><small>Shield reviews</small></div>
+            </div>
+            <div class="lifecycle-caption"><span><i class="legend-dot blue-dot"></i> Automated agent actions</span><span><i class="legend-dot gray-dot"></i> Merchant review stage</span></div>
+          </article>
+          <article class="panel engine-panel">
+            <div class="panel-heading"><div><div class="eyebrow">RISK INTELLIGENCE</div><h2>Merchant shield</h2></div><span class="shield-icon">⬡</span></div>
+            <div class="risk-meter-wrap"><div class="risk-meter"><div class="risk-meter-fill" id="risk-meter-fill"></div><div class="risk-meter-center"><strong id="risk-meter-value">—</strong><small>AVG. SCORE</small></div></div><div class="risk-summary"><strong id="risk-summary-title">Monitoring transactions</strong><p>Transparent rules check order value, device, location and velocity.</p><div class="risk-legend"><span><i class="legend-dot green-dot"></i> Low</span><span><i class="legend-dot orange-dot"></i> Medium</span><span><i class="legend-dot red-dot"></i> High</span></div></div></div>
+            <button class="text-button" data-go="merchant">Open merchant shield <span>→</span></button>
+          </article>
+        </div>
+
+        <article class="panel recent-panel">
+          <div class="panel-heading"><div><div class="eyebrow">TRANSACTION MONITOR</div><h2>Recent activity</h2></div><button class="text-button" data-go="merchant">View all transactions →</button></div>
+          <div class="table-wrap"><table class="data-table"><thead><tr><th>TRANSACTION</th><th>BUYER</th><th>ITEM</th><th>AMOUNT</th><th>RISK</th><th>STATUS</th></tr></thead><tbody id="recent-rows"></tbody></table></div>
+        </article>
+        <div class="disclaimer-line"><span>ⓘ</span> Demo environment. Negotiation and risk scoring use local example rules, not a production AI model.</div>
+      </section>
+
+      <section class="page" id="page-buyer">
+        <div class="page-heading heading-row buyer-heading"><div><div class="eyebrow">BUYER EXPERIENCE / PERSONAL SHOPPING AGENT</div><h1>Your deal, negotiated.</h1><p>Tell the agent what you want. It finds a member price and prepares checkout.</p></div><div class="buyer-trust"><span class="trust-star">✦</span><div><strong>Plus member</strong><small>Returning buyer · Demo profile</small></div></div></div>
+        <div class="buyer-layout">
+          <div class="buyer-catalog">
+            <div class="section-header"><div><h2>Discover products</h2><p>Choose an item to start a negotiation.</p></div><span class="catalog-count">4 ITEMS</span></div>
+            <div class="product-grid" id="product-grid"></div>
+            <div class="tip-card"><span class="tip-icon">✧</span><div><strong>Try natural language</strong><p>For example: “Can you do $110 if I buy today?” or “Find my best member price.”</p></div></div>
+          </div>
+          <aside class="agent-card">
+            <div class="agent-card-head"><div class="agent-avatar">✧</div><div><strong>PayAgent Negotiator</strong><small><span class="pulse-dot"></span> Agent online</small></div><span class="ai-pill">AI AGENT</span></div>
+            <div class="selected-product" id="selected-product"></div>
+            <div class="chat-area" id="chat-area"><div class="chat-date">TODAY · NEGOTIATION SESSION</div><div class="chat-bubble agent-bubble"><div class="bubble-label">PAYAGENT</div>Hi! I can negotiate a personalized price for you. Choose a product, then tell me your budget or ask for your best member deal.</div></div>
+            <div class="offer-controls">
+              <label for="buyer-message">YOUR OFFER OR MESSAGE</label>
+              <div class="message-input-row"><input id="buyer-message" type="text" maxlength="250" placeholder="e.g. Can you do $110?" autocomplete="off"><button id="send-offer" class="send-button" title="Send offer">↑</button></div>
+              <div class="offer-shortcuts"><button id="best-price" class="soft-button">✧ Find best price</button><label class="qty-control">Qty <select id="buyer-quantity"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label></div>
+              <div class="negotiated-box" id="negotiated-box"><div><small>YOUR PERSONALIZED PRICE</small><strong id="negotiated-price">—</strong></div><span id="negotiated-saving">Start a negotiation</span></div>
+              <div class="risk-test-options"><label><input type="checkbox" id="flag-new-device"> Simulate new device</label><label><input type="checkbox" id="flag-country"> Simulate country mismatch</label></div>
+              <button id="checkout-button" class="checkout-button" disabled>Continue to checkout <span>→</span></button>
+              <button id="risky-demo" class="risk-demo-button">Run a high-risk demo transaction</button>
+              <p class="secure-note">▣ Secure demo checkout · No real money in mock mode</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="page" id="page-merchant">
+        <div class="page-heading heading-row"><div><div class="eyebrow">MERCHANT EXPERIENCE / AG GRID DISPUTE SHIELD</div><h1>Protect every transaction.</h1><p>Live order signals, explainable risk scores and an evidence trail for merchant operations.</p></div><div class="shield-status"><span class="pulse-dot"></span> SHIELD ACTIVE</div></div>
+        <div class="merchant-kpis"><div class="mini-kpi"><span class="mini-kpi-icon green">✓</span><div><strong id="merchant-approved">—</strong><small>Approved / resolved</small></div></div><div class="mini-kpi"><span class="mini-kpi-icon orange">!</span><div><strong id="merchant-review">—</strong><small>Review required</small></div></div><div class="mini-kpi"><span class="mini-kpi-icon blue">⌁</span><div><strong id="merchant-rate">—</strong><small>Approval rate</small></div></div></div>
+        <div class="merchant-layout">
+          <article class="panel transactions-panel">
+            <div class="panel-heading"><div><div class="eyebrow">REAL-TIME INGESTION</div><h2>Transaction grid</h2></div><span class="grid-live"><i class="pulse-dot"></i> UPDATING</span></div>
+            <div class="table-toolbar"><div class="search-box"><span>⌕</span><input id="transaction-search" placeholder="Search ID, buyer or item..."></div><select id="status-filter"><option value="ALL">All statuses</option><option value="APPROVED">Approved</option><option value="REVIEW_REQUIRED">Review required</option><option value="RESOLVED">Resolved</option></select></div>
+            <div class="table-wrap merchant-table-wrap"><table class="data-table merchant-table"><thead><tr><th>ORDER</th><th>BUYER / ITEM</th><th>AMOUNT</th><th>RISK</th><th>STATUS</th></tr></thead><tbody id="transaction-rows"></tbody></table></div>
+            <div class="grid-foot"><span id="grid-count">0 transactions</span><span>Click a row to inspect evidence ↗</span></div>
+          </article>
+          <aside class="panel transaction-detail" id="transaction-detail"><div class="empty-detail"><div class="empty-shield">⬡</div><h3>Select a transaction</h3><p>Choose an order from the grid to inspect its risk analysis, timeline and evidence packet.</p></div></aside>
+        </div>
+      </section>
+
+      <section class="page" id="page-activity">
+        <div class="page-heading"><div class="eyebrow">AUDITABILITY / EVENT LOG</div><h1>Every action, recorded.</h1><p>Review the chronological events generated by buyer negotiation, payment and merchant shield operations.</p></div>
+        <article class="panel activity-panel"><div class="panel-heading"><div><div class="eyebrow">LATEST SYSTEM EVENTS</div><h2>Audit timeline</h2></div><span class="panel-chip">Append-only demo log</span></div><div id="activity-list" class="activity-list"></div></article>
+        <div class="disclaimer-line"><span>ⓘ</span> This local audit log demonstrates the event model; it is not a tamper-proof production ledger.</div>
+      </section>
+
+      <footer class="app-footer"><span>PAYAGENT AI <b>·</b> HACKATHON DEMO</span><span>Built to demonstrate agentic commerce · <a href="https://developer.paypal.com/api/rest/integration/orders-api" target="_blank" rel="noreferrer">PayPal Orders API docs ↗</a></span></footer>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="modal-backdrop" id="help-modal" hidden><div class="modal"><button class="modal-close" id="close-help">×</button><div class="eyebrow">ABOUT THIS PROTOTYPE</div><h2>What is working here?</h2><p><b>Buyer agent:</b> a local negotiation engine extracts a price request, applies member and quantity discounts, and returns an offer or counter-offer.</p><p><b>Merchant shield:</b> an explainable risk engine scores each checkout using order value, device, location and velocity signals. High-risk orders enter a review queue.</p><p><b>Payments:</b> mock mode records a simulated checkout with no money movement. Optional PayPal Sandbox mode creates and captures sandbox orders using server-side API credentials.</p><p class="modal-note">This is a functional hackathon prototype, not production payment, fraud, chargeback or legal-compliance software.</p></div></div>
+  <script src="app.js"></script>
+</body>
+</html>
